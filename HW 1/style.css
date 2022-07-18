@@ -1,0 +1,35 @@
+div{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+a:hover{
+    text-decoration: underline;
+}
+.all_h{
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
+    background-color: yellow;
+}
+.all_p{
+    text-align: left;
+    font-size: 25px;
+}
+h2{
+    color: blue;
+    background-color: yellow;
+    font-size: 35px;
+}
+p{
+    text-align: left;
+    font-size: 25px;
+}
+ul{
+    text-align: left;
+    color: darkolivegreen;
+    font-size: 25px;
+}
+
