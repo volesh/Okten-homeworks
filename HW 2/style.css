@@ -1,0 +1,38 @@
+.maine{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 300px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 50px 20px 20px 20px;
+    text-align: center;
+    justify-content: center;
+
+}
+p{
+    color: gray;
+    margin: 40px 0px;
+    font-size: 20px;
+}
+.button_box{
+    text-align: center;
+}
+.button{
+    width: 150px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 12px;
+    display: block;
+    justify-content: center;
+    text-align: center;
+
+
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
