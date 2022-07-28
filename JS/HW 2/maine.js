@@ -1,5 +1,5 @@
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
-let a = ['word', 28, true, [1, 2, 3], 'some text', false, 345, null, 09, 'hello']
+let a = ['word', 28, true, [1, 2, 3], 'some text', false, 345, null, 9, 'hello'];
 console.log(a[0]);
 console.log(a[1]);
 console.log(a[2]);
@@ -49,5 +49,3 @@ console.log(users[6]['password']);
 console.log(users[7].password);
 console.log(users[8].password);
 console.log(users[9].password);
-
-
