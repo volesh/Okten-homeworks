@@ -1,0 +1,24 @@
+
+.product_card{
+    display: inline-block ;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 0px 15px 30px 140px;
+}
+.product_title{
+    font-size: 30px;
+    color: grey;
+}
+.product_image{
+    width: 400px;
+    height: 400px;
+}
+.product_card:hover{
+    text-shadow: 5px 5px 5px;
+    box-shadow: 5px 5px 5px;
+    padding: 0px 5px 5px 0px;
+}
