@@ -1,0 +1,31 @@
+body{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.box{
+    width: 700px;
+    text-align: center;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background: grey;
+    color: white;
+
+}
+h2{
+    font-size: 40px;
+    text-shadow: 1px 1px 1px;
+    text-decoration: underline;
+}
+h3{
+    font-size: 25px;
+}
+.address{
+    text-align: start;
+}
+p{
+    font-size: 20px;
+}
