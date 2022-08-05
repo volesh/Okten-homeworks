@@ -15,6 +15,7 @@ console.log(areaOfOCulinder(3, 3))
 // - створити функцію яка приймає масив та виводить кожен його елемент
 let list = [1, 2, 3, 4, 5, 6]
 
+
 function loop(array) {
     for (let item of array) {
         console.log(item);
@@ -35,7 +36,7 @@ makeText(txt)
 
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-function lishka(text){
+function lishka(text) {
     document.write(`
         <ul>
             <li>${text}</li>
@@ -49,12 +50,12 @@ lishka('lorem')
 
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-function lishka2(text, count){
+function lishka2(text, count) {
     document.write(`<ul>`)
-        for (let i = 1; i <= count; i++) {
-            document.write(`<li>${text}</li>`)
+    for (let i = 1; i <= count; i++) {
+        document.write(`<li>${text}</li>`)
 
-        }
+    }
     document.write(`</ul>`)
 
 }
@@ -64,11 +65,12 @@ lishka2('some text', 10)
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 let list2 = [123, 'kdngdfk', true, 265, ';sdkgf', false]
+
 function makeList(array) {
     document.write(`<ul>`)
-        for (let item of array) {
-            document.write(`<li>${item}</li>`)
-        }
+    for (let item of array) {
+        document.write(`<li>${item}</li>`)
+    }
     document.write(`</ul>`)
 }
 
@@ -104,7 +106,8 @@ doSomething(listOfObject);
 
 // - створити функцію яка повертає найменьше число з масиву
 let numbers = [213, 214, 4134, 34, 235, 24, 5346, 8, 45, 235, 2, 645, 2346];
-function findMax(array){
+
+function findMax(array) {
     let x = array[0]
     for (let i = 1; i < array.length; i++) {
         if (array[i] < x) {
@@ -120,7 +123,8 @@ console.log(findMax(numbers));
 
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
 let numbers1 = [213, 214, 4134, 34, 235, 24, 5346, 8, 45, 235, 2, 645, 2346];
-function findSum(array){
+
+function findSum(array) {
     let x = 0;
     for (const n of array) {
         x += n
