@@ -116,6 +116,7 @@ let sortedCards = cards.reduce((accum, card) => {
     return accum
 }, {spades:[], diamonds:[], hearts:[], clubs:[]} )
 console.log(sortedCards);
+.
 
 
 
