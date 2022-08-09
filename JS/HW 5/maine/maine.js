@@ -133,3 +133,13 @@ function findSum(array) {
 }
 
 console.log(findSum(numbers1));
+
+
+let a = [
+    {b: 2},
+    {a: 1, b: 2},
+    {a: 1, b: 2},
+    {a: 1, b: 2},
+    {a: 1, b: 2}
+]
+console.log(a.some(value => value.a))
