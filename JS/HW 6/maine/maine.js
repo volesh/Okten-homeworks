@@ -38,11 +38,11 @@ console.log(listOfDigits.map(n => `${n}`));
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]/
 let nums = [11,21,3];
-function sortNums(direction){
+function sortNums(nums, direction){
     if (direction === 'ascending'){
-        return nums.sort((a, b) => b - a);
-    }else if (direction === 'descending'){
         return nums.sort((a, b) => a - b);
+    }else if (direction === 'descending'){
+        return nums.sort((a, b) => b - a);
     }else{
         return `????`;
     }
@@ -116,7 +116,7 @@ let sortedCards = cards.reduce((accum, card) => {
     return accum
 }, {spades:[], diamonds:[], hearts:[], clubs:[]} )
 console.log(sortedCards);
-.
+
 
 
 
