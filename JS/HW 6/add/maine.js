@@ -37,9 +37,7 @@ console.log(firstUp(str));
 
 
 // - Дано список імен.
-let n1 = 'Harry..Potter'
 let n2 = 'Ron---Whisley'
-let n3 = 'Hermione__Granger'
 // Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
 // let n1 = 'Harry Potter'
 // let n2 = 'Ron Whisley'
@@ -158,19 +156,7 @@ let coursesArray = [
         title: 'FullStack',
         monthDuration: 7,
         hourDuration: 909,
-        modules: ['html',
-            'css',
-            'js',
-            'mysql',
-            'mongodb',
-            'react',
-            'angular',
-            'aws',
-            'docker',
-            'git',
-            'node.js',
-            'python',
-            'java']
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js', 'python', 'java']
     },
     {
         title: 'Frontend',
@@ -197,7 +183,7 @@ let symb = "о";
 let str2 = "Астрономия это наука о небесных объектах";
 
 function count(symb, str) {
-    count = 0;
+    let count = 0;
     while (str.includes(symb)) {
         str = str.replace(symb, '')
         count++
@@ -246,6 +232,9 @@ function findBig(arr){
     }
     return bigBook
 }
+let max = books[0]
+books.forEach((item) => max = item.pages > max.pages ? item : max);
+console.log(max);
 
 function manyGanges(arr) {
     let many = arr[0];
@@ -277,4 +266,3 @@ console.log(books.find(book => book.autors.length === 1));
 console.log(books.sort((a, b) => {
     return a.pages - b.pages
 }));
-
