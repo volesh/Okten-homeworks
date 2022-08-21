@@ -24,8 +24,6 @@ console.log(users);
 
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 console.log(users.filter(item => item.id % 2 === 0));
-
-
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 console.log(users.sort((a, b) => a.id - b.id));
 
@@ -94,6 +92,8 @@ function Car(model, producer, year, maxSpeed, volume) {
 let cars = []
 cars.push(new Car('cayen', 'porshe', '2020', '200', '4.0'))
 cars[0].addDriver({name: 'add', age: 30})
+cars[0].increaseMaxSpeed(250);
+console.log(cars[0]);
 
 
 //
@@ -182,11 +182,12 @@ for (const girl of cinderellas) {
         break
     }
 }
+console.log(cinderellas.find(girl => girl.size === prince.size));
+
 
 function callback(item) {
     return item.size === prince.size
 }
-console.log(cinderellas.find(girl => girl.size === prince.size));
 console.log(cinderellas.find(girl => callback(girl)));
 
 

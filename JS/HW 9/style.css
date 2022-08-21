@@ -1,0 +1,30 @@
+.courses{
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.container {
+    border: 1px solid black;
+    padding: 10px;
+
+}
+.title{
+    text-align: center;
+    font-size: 40px;
+}
+.month {
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 60px;
+
+}
+.hour{
+    display: inline-block;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+}
