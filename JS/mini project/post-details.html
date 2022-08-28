@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<style>
+
+    .div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background: #8193b7;
+        border-radius: 20px;
+    }
+    .li{
+        margin: 0 auto;
+        background: #8193b7;
+        margin-bottom: 6px;
+        border-radius: 10px;
+        width: 50%;
+        text-align: center;
+    }
+    .coment{
+        padding: 15px;
+        border-radius: 20px;
+        background: yellow;
+        width: 23%;
+        border: 1px solid black;
+
+    }
+    .name{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 40px;
+        margin-top: 10px;
+    }
+</style>
+<script>
+    //     На странице post-details.html:
+    // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
+    // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
+
+    let url = new URL(location.href);
+    let id = url.searchParams.get('id');
+
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}/`)
+        .then((response) => response.json())
+        .then(posts => {
+            let ul = document.createElement('ul')
+            document.body.appendChild(ul)
+
+            for (const item in posts) {
+                let li = document.createElement('li')
+                li.classList.add('li')
+                li.innerText = `${item} - ${posts[item]}`
+                ul.appendChild(li)
+            }
+
+            fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+                .then((response) => response.json())
+                .then((coments) => {
+
+                    let comentsDiv = document.createElement('div')
+                    comentsDiv.classList = 'div'
+                    document.body.appendChild(comentsDiv)
+
+                    let name = document.createElement('div')
+                    name.innerText = 'Comments'
+                    name.classList.add('name')
+                    comentsDiv.appendChild(name)
+
+
+                    for (const item of coments) {
+                        let coment = document.createElement('p')
+                        coment.classList = 'coment'
+                        coment.innerText = `${item.body}`
+
+                        comentsDiv.appendChild(coment)
+
+                    }
+                });
+        });
+</script>
+</body>
+</html>

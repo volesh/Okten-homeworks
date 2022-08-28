@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    .h3{
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        border-radius: 20px;
+        background: #8193b7;
+    }
+    .btn{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        height: 50px;
+        text-align: center;
+        font-size: 30px;
+        border-radius: 20px;
+        background: #eadd70;
+
+    }
+    .btn:hover{
+        background: #ffeb11;
+    }
+    .div1{
+        width: 60%;
+        margin: 0 auto;
+        border: 1px solid black;
+        border-radius: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-around;
+        padding: 20px;
+        margin-bottom: 10px;
+        transition-delay: 1s;
+    }
+    .li{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius: 10px;
+        width: 18%;
+        background: #8193b7;
+        text-align: center;
+    }
+    .btn1{
+        border-radius: 20px;
+        background: yellow;
+    }
+    .btn1:hover{
+        font-size: 15px;
+    }
+</style>
+<script>
+    // На странице user-details.html:
+    // 4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули
+    // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
+    // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
+    //     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
+
+    function foo(e){
+        let uns = ''
+        for (const item in e) {
+            if (typeof e[item] === 'object') {
+                uns += `\n${item}: \n${foo(e[item])}
+                 `
+            }else{
+                uns += `${item} - ${e[item]}
+                 `
+            }
+        }
+        return uns
+    }
+
+    let url = new URL(location.href);
+    let id = url.searchParams.get('id');
+
+        fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then((response) => response.json())
+        .then(user => {
+
+            let div = document.createElement('div')
+            document.body.appendChild(div)
+
+            for (const item in user) {
+                let h3 = document.createElement('h3')
+                h3.classList.add('h3')
+                h3.style.border = '1px solid black'
+                if (typeof user[item] === 'object') {
+                    h3.innerText = `${item}: \n${foo(user[item])}`
+                }else
+                    h3.innerText = `${item} - ${user[item]}`
+                div.appendChild(h3)
+            }
+
+            fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
+                .then((response) => response.json())
+                .then(user => {
+
+                    let div1 = document.createElement('div')
+                    document.body.appendChild(div1)
+                    div1.classList.add('div1')
+                    div1.style.display = 'none'
+
+                    for (const item of user) {
+
+                        let li = document.createElement('div')
+                        li.classList.add('li')
+                        li.innerText = item.title
+                        div1.appendChild(li)
+
+                        let button = document.createElement('button');
+                        button.innerText  = 'post-details'
+                        li.appendChild(button)
+                        button.classList.add('btn1')
+                        button.onclick = ev => {
+                            location.href = `post-details.html?id=${item.id}`
+                        };
+                    }
+                    let flag = true;
+                    let button = document.createElement('button');
+                    button.classList.add('btn')
+                    button.innerText = 'Posts of current user'
+                    button.onclick = ev => {
+                        if (flag) {
+                            div1.style.display = 'flex'
+                            flag = !flag
+                        }else{
+                        div1.style.display = 'none'
+                        flag = !flag
+                        }
+                    };
+                    document.body.appendChild(button)
+                });
+
+        });
+
+
+
+</script>
+</body>
+</html>
