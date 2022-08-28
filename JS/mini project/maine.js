@@ -23,6 +23,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
             };
 
 
+
+
             div.append(userInfo, button)
             document.body.appendChild(div)
         });
