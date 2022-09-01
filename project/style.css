@@ -1,3 +1,6 @@
+html{
+    height: 100%;
+}
 body{
     margin: 0;
     padding: 0;
@@ -14,7 +17,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 20px;
-    height: 671px;
+    height: 100%;
     background-image: url("https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg");
 }
 .header{
